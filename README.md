@@ -63,3 +63,10 @@ QMKBUILDER_UI_PORT_DOCKER=8080
 ```
 
 Then configure your routing rules so http://example.com/build is routed to localhost:5004, and all other qmk builder urls are routed to localhost:8080.
+
+## I want to edit qmkbuilder and run my own source
+
+* Create a fork of https://github.com/ruiqimao/qmkbuilder
+* Make your code changes
+* Edit `Dockerfile` so it clones your repo instead of the original
+* `docker-compose up --build`
