@@ -1,0 +1,12 @@
+version: "3"
+services:
+  builder:
+    build: .
+    ports:
+      - "${QMKBUILDER_BUILDER_PORT_DOCKER-5004}:5004"
+  ui:
+    build: .
+    ports:
+      - "${QMKBUILDER_UI_PORT_DOCKER-8080}:8080"
+    working_dir: "/qmkbuilder"
+    command: "npx http-server static -p 8080 --cors"
